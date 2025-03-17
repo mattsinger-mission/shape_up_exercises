@@ -14,12 +14,14 @@ h1{
 header {
     & h2 {
         font-size: 170%;
-        text-indent: 30px;
+        :first-child {
+            font-style: italic;
+            color: steelblue;
+       }
     }
     
     & h3 {
         font-size: 130%;
-        text-indent: 30px;
    }
    
    & h2 :first-child {
