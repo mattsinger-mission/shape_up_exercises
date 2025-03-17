@@ -23,11 +23,6 @@ header {
     & h3 {
         font-size: 130%;
    }
-   
-   & h2 :first-child {
-        font-style: italic;
-        color: steelblue;
-   }
 
    & img {
     float: left;
