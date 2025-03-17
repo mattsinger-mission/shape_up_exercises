@@ -14,11 +14,7 @@ h1{
 header {
     & h2 {
         font-size: 170%;
-        :first-child {
-            font-style: italic;
-            color: steelblue;
        }
-    }
     
     & h3 {
         font-size: 130%;
@@ -28,6 +24,10 @@ header {
     float: left;
     margin-right: 1em;
 } 
+    h2:first-child {
+        font-style: italic;
+        color: steelblue;
+   }
 }
 
 section {
