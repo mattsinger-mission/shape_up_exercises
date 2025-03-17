@@ -12,20 +12,20 @@ h1{
 }
 
 header {
-    & h2 {
+h2 {
         font-size: 170%;
        }
     
-    & h3 {
+h3 {
         font-size: 130%;
    }
 
-   & img {
+img {
     float: left;
     margin-right: 1em;
 } 
 
-    & h2:first-child {
+h2:first-child {
     font-style: italic;
     color: steelblue;
 }
