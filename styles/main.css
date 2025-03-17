@@ -24,11 +24,13 @@ header {
     float: left;
     margin-right: 1em;
 } 
-header h2:first-child {
-        font-style: italic;
-        color: steelblue;
-   }
 }
+
+header h2:first-child {
+    font-style: italic;
+    color: steelblue;
+}
+
 
 section {
     a{
