@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+ a{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 175%;
+}
+
+header {
+    & h2 {
+        font-size: 170%;
+        text-indent: 30px;
+    }
+    
+    & h3 {
+        font-size: 130%;
+        text-indent: 30px;
+   }
+   
+   & h2:first-child {
+        font-style: italic;
+        color: steelblue;
+   }
+
+   & img {
+    float: left;
+    margin-right: 1em;
+} 
+}
+
+section {
+    a{
+        color: maroon;
+    }
+ a:hover, a:focus {
+        color: steelblue
+ }   
+}
+
+aside {
+    & h2 {
+       color: maroon;
+    }
+
+    & ul {
+       line-height: 150%;
+    }
+
+    a{
+        color: steelblue;
+    }
+ a:hover, a:focus {
+        color: maroon
+ }   
+}
+
+footer {
+    font-size: 90%;
+    text-align: center;
+}
