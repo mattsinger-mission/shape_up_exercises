@@ -11,12 +11,6 @@ h1{
     font-size: 175%;
 }
 
-
-h2:first-child {
-    font-style: italic;
-    color: steelblue;
-}
-
 header {
     & h2 {
         font-size: 170%;
