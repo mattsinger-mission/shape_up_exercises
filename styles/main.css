@@ -22,7 +22,7 @@ header {
         text-indent: 30px;
    }
    
-   & :first-child {
+   & h2 :first-child {
         font-style: italic;
         color: steelblue;
    }
