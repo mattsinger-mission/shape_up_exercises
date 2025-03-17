@@ -12,17 +12,17 @@ h1{
 }
 
 header {
-& h2 {
+h2 {
         font-size: 170%;
         font-style: italic;
         color: steelblue;
        }
     
-& h3 {
+h3 {
         font-size: 130%;
    }
 
-& img {
+img {
     float: left;
     margin-right: 1em;
 } 
