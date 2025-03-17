@@ -27,8 +27,7 @@ img {
     margin-right: 1em;
 } 
 
-h2::after {
-    content: <h2>Shape Up!</h2>;
+h2:last-child {
     font-style: normal;
     color: normal;
 }
