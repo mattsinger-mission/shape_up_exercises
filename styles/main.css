@@ -14,6 +14,8 @@ h1{
 header {
 & h2 {
         font-size: 170%;
+        font-style: italic;
+        color: steelblue;
        }
     
 & h3 {
@@ -26,9 +28,9 @@ header {
 } 
 
 h2::after {
-    content: img src="images/shape_up_logo.png" alt="shape up logo";
-    font-style: italic;
-    color: steelblue;
+    content: <h2>Shape Up!</h2>;
+    font-style: normal;
+    color: normal;
 }
 }
 
