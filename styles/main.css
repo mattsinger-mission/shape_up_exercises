@@ -24,7 +24,7 @@ header {
     float: left;
     margin-right: 1em;
 } 
-    h2:first-child {
+header h2:first-child {
         font-style: italic;
         color: steelblue;
    }
