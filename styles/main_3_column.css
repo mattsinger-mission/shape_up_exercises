@@ -1,0 +1,113 @@
+:root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 95vw;
+    margin: 0 auto;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: calc(100% + 1vw);
+}
+
+ a{
+    font-weight: bold;
+}
+
+
+
+header {
+background-image: linear-gradient(white, lightsteelblue);
+    margin-left: -1em;
+    margin-right: -1em;
+    border-bottom: 2px solid steelblue;
+    
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    
+    
+    
+   
+h1 {
+    font-size: calc(175% + 1vw);
+    font-style: italic;
+    color: steelblue;
+    padding-bottom: 0;
+    margin-bottom: 0.2em; 
+}
+
+h3 {
+    font-size: calc(110% + 1vw);
+    margin-top: 0;
+}
+
+img {
+    float: left;
+    margin-right: 1em;
+    width: clamp (100px, 100%, 120px);
+} 
+
+}
+
+
+
+main{
+    display: flex;
+    section {
+        flex-basis: 50%;
+   }
+    a{
+        color: maroon;
+    }
+ a:hover, a:focus {
+        color: steelblue
+ } 
+ h2 {
+    font-size: calc(115% + 1vw);
+    margin-top: 0;
+}  
+   
+}
+
+aside {
+    flex-basis: 25%;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: .5em;
+    border: solid steelblue;
+    border-radius: 10px;
+    margin-bottom: 2em;
+    display: inline-block;
+    align-self: flex-start;
+   
+
+    & h2 {
+       color: maroon;
+    }
+
+    & ul {
+        line-height: 150%;
+        padding-left: .75em;
+    }
+
+    a {
+        color: steelblue;
+    }
+    a:hover, a:focus {
+        color: maroon;
+    }
+   
+}
+
+
+footer {
+    background-color: steelblue;
+    margin-left: -1.2em;  
+    margin-right: -1.2em;
+    font-size: 90%;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
