@@ -5,13 +5,11 @@
 }
 
 body {
-    width: 700px;
+    width: 95vw;
     margin: 0 auto;
     padding: 1em;
-    border: 4px solid steelblue;
-    box-shadow: 4px 4px 6px 6px black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+    font-size: calc(100% + 1vw);
 }
 
  a{
@@ -33,63 +31,71 @@ background-image: linear-gradient(white, lightsteelblue);
     
    
 h1 {
-        font-size: 200%;
-        font-style: italic;
-        color: steelblue;
-        padding-bottom: 0;
-        margin-bottom: 0;
-       }
-    
-h2 {
-        font-size: 150%;
-        marging-top: 0;
-   }
+    font-size: calc(175% + 1vw);
+    font-style: italic;
+    color: steelblue;
+    padding-bottom: 0;
+    margin-bottom: 0.2em; 
+}
 
 h3 {
-        font-size: 130%;
-   }
+    font-size: calc(110% + 1vw);
+    margin-top: 0;
+}
 
 img {
     float: left;
     margin-right: 1em;
+    width: clamp (100px, 100%, 120px);
 } 
 
 }
 
 
 
-
+main{
+    display: flex;
 section {
+    flex-basis: 75%;
     clear: left;
     a{
         color: maroon;
     }
  a:hover, a:focus {
         color: steelblue
- }   
+ } 
+ h2 {
+    font-size: calc(115% + 1vw);
+    margin-top: 0;
+}  
 }
 
 aside {
-    padding: 1em;
+    flex-basis: 25%;
+    margin-left: 1em;
+    padding: .5em;
     border: solid steelblue;
     border-radius: 10px;
     margin-bottom: 2em;
+    display: inline-block;
+    align-self: flex-start;
 
     & h2 {
        color: maroon;
-       text-indent: 1em;
     }
 
     & ul {
-       line-height: 150%;
+        line-height: 150%;
+        padding-left: .75em;
     }
 
-    a{
+    a {
         color: steelblue;
     }
- a:hover, a:focus {
-        color: maroon
- }   
+    a:hover, a:focus {
+        color: maroon;
+    }
+}
 }
 
 footer {
