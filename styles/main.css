@@ -16,61 +16,172 @@ body {
     font-weight: bold;
 }
 
-
-
 header {
 background-image: linear-gradient(white, lightsteelblue);
     margin-left: -1em;
     margin-right: -1em;
     border-bottom: 2px solid steelblue;
-    
     margin-bottom: 1em;
     padding-bottom: 1em;
-    
-    
-    
-   
-h1 {
+}
+
+header h1 {
     font-size: calc(175% + 1vw);
     font-style: italic;
     color: steelblue;
     padding-bottom: 0;
-    margin-bottom: 0.2em; 
+    margin-bottom: 0.2em;
 }
 
-h3 {
+header h3 {
     font-size: calc(110% + 1vw);
     margin-top: 0;
 }
 
-img {
+header img {
     float: left;
     margin-right: 1em;
     width: clamp (100px, 100%, 120px);
-} 
+}
 
+.navbar {
+    background-color: steelblue;
+    margin-bottom: 1em;
+    & ul {
+        color: white;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    & li {
+        padding: 0;
+    }
+
+    & a {
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+        margin: 0;
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    & a:hover, a:focus {
+        background-color: steelblue;
+        color: white;
+        outline: none;
+    }
+
+    & li > a.current {
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 0.3em 0.7em;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.menu li {
+    flex: 0 0 auto;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin: 0;
+}
+
+.menu li > small {
+    margin-left: .5em;
+    display: inline-block;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: steelblue;
+    text-align: left;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.submenu li {
+    text-align: left;
+}
+
+.submenu li a {
+    display: block; 
+    padding: 0.75em 1em;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+}
+
+.submenu li a:hover, .submenu li a:focus {
+    background-color: steelblue;
+    color: white;
+    outline: none;
 }
 
 
+.submenu {
+    & li a {
+        display: none; 
+    }
+}
+
+.menu li:hover .submenu {
+    display: block;
+    & li a {
+        display: block;
+    }
+}
 
 main{
     display: flex;
-section {
-    flex-basis: 75%;
-    clear: left;
-    a{
-        color: maroon;
-    }
- a:hover, a:focus {
-        color: steelblue
- } 
- h2 {
-    font-size: calc(115% + 1vw);
-    margin-top: 0;
-}  
 }
 
-aside {
+main h3 {
+    color: maroon;
+}
+main section {
+    flex-basis: 75%;
+    clear: left;
+}
+main section a{
+    color: maroon;
+}
+main section a:hover, main section a:focus {
+        color: steelblue
+ }
+main section h2 {
+    font-size: calc(115% + 1vw);
+    margin-top: 0;
+}
+
+
+main aside {
     flex-basis: 25%;
     margin-left: 1em;
     padding: .5em;
@@ -79,28 +190,28 @@ aside {
     margin-bottom: 2em;
     display: inline-block;
     align-self: flex-start;
+}
 
-    & h2 {
+main aside h2 {
        color: maroon;
     }
 
-    & ul {
+main aside ul {
         line-height: 150%;
         padding-left: .75em;
     }
 
-    a {
+main aside a {
         color: steelblue;
     }
-    a:hover, a:focus {
+main aside a:hover, main aside a:focus {
         color: maroon;
     }
-}
-}
+
 
 footer {
     background-color: steelblue;
-    margin-left: -1.2em;  
+    margin-left: -1.2em;
     margin-right: -1.2em;
     font-size: 90%;
     color: white;
