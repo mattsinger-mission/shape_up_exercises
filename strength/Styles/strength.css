@@ -218,9 +218,8 @@ main section a:hover, main section a:focus {
         color: steelblue
  }
 main section h2 {
-    font-size: calc(90% + 1vw);
-    margin-top: 1em;
-    margin-bottom: .5em;
+    font-size: calc(115% + 1vw);
+    margin-top: 0;
     color: maroon;
 }
     
@@ -239,9 +238,6 @@ main aside h2 {
 main aside ul {
         line-height: 150%;
         padding-left: .75em;
-    }
-main aside ul.resources {
-        list-style-type: none;
     }
 
 main aside a {
@@ -272,6 +268,11 @@ footer {
     main section {
         flex-basis: 75%;
         clear: left;
+    }
+    main section h2 {
+        margin-top: 0;
+        font-size: calc(115% + 1vw);
+        color: 
     }
     main section a{
         color: maroon;
