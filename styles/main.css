@@ -1,8 +1,14 @@
+@font-face {
+    font-family: Captain;
+    src: url("../styles/American Captain.ttf");}
+
 :root {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+    
+    }
+
 
 body {
     width: 95vw;
@@ -10,8 +16,8 @@ body {
     padding: 1em;
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(100% + 1vw);
+    
 }
-
  a{
     font-weight: bold;
 }
@@ -42,6 +48,12 @@ header img {
     float: left;
     margin-right: 1em;
     width: clamp(100px, 100%, 120px);
+}
+
+header.stress-header h1 {
+    font-family: 'Captain';
+    
+
 }
 
 .navbar {
@@ -223,6 +235,34 @@ main section h2 {
     margin-bottom: .5em;
     color: maroon;
 }
+.stress-section h2 {
+    color: black
+}
+
+
+.stress-figure {
+    float: left;
+    max-width: 40%;
+    margin-top: 0; 
+    margin-right: 1em; 
+    margin-left: 0;
+    margin-bottom: 1em; 
+  }
+  
+  .stress-image {
+      display: block; /* Prevents potential extra space below */
+      max-width: 100%;
+      height: auto; /* Maintains aspect ratio */
+  }
+
+  .stress-figure figcaption {
+    margin-top: .5em;
+    font-weight: bold;
+    text-align: left;
+    word-wrap: break-word;
+    max-width: 100%;
+    border-bottom : 2px solid steelblue;
+  }
     
 main aside {
     margin-left: 0;
@@ -250,7 +290,6 @@ main aside a {
 main aside a:hover, main aside a:focus {
         color: maroon;
     }
-
 
 footer {
     background-color: steelblue;
