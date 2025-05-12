@@ -508,8 +508,7 @@ td[rowspan] {
         main{
             display: block;
         }
-        main{
-            display: flex;
+        
         }
         
         main h3 {
@@ -559,6 +558,6 @@ td[rowspan] {
             font-weight: bold;
         }
         
-       } 
+       
         
        
