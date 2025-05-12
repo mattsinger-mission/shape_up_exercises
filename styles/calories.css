@@ -235,6 +235,34 @@ main section h2 {
     margin-bottom: .5em;
     color: maroon;
 }
+.stress-section h2 {
+    color: black
+}
+
+
+.stress-figure {
+    float: left;
+    max-width: 40%;
+    margin-top: 0; 
+    margin-right: 1em; 
+    margin-left: 0;
+    margin-bottom: 1em; 
+  }
+  
+  .stress-image {
+      display: block; /* Prevents potential extra space below */
+      max-width: 100%;
+      height: auto; /* Maintains aspect ratio */
+  }
+
+  .stress-figure figcaption {
+    margin-top: .5em;
+    font-weight: bold;
+    text-align: left;
+    word-wrap: break-word;
+    max-width: 100%;
+    border-bottom : 2px solid steelblue;
+  }
     
 main aside {
     margin-left: 0;
@@ -272,8 +300,6 @@ footer {
     padding: 1em;
     text-align: center;
 }
-
-
 table {
     width: 80%;
     margin: 20px auto;
@@ -299,7 +325,6 @@ td[rowspan] {
     font-weight: bold; 
 }
 
-
 @media only screen and (min-width: 1310px) {
     main{
         display: flex;
@@ -322,27 +347,31 @@ td[rowspan] {
         font-size: calc(115% + 1vw);
         margin-top: 0;
     }
-   main section table {
-        width: 100%;
+    
+    table {
+        width: 80%;
         margin: 20px auto;
         border-collapse: collapse; 
         font-family: Arial, sans-serif;
         border: 2px solid black; 
     }
-    main section th, td {
+    caption {
+        color: maroon;
+        }
+    
+    th, td {
         text-align: left; 
         padding: 8px;
     }
-    main section th {
+    th {
         background-color: steelblue;
         color: white;
         font-weight: bold;
     }
-    main section td[rowspan] {
+    td[rowspan] {
         vertical-align: top; 
         font-weight: bold; 
     }
-     
     
     main aside {
         flex-basis: 25%;
@@ -372,137 +401,144 @@ td[rowspan] {
         }
     
 
-        .navbar {
-            background-color: steelblue;
-            margin-bottom: 1em;
-            & ul {
-                color: white;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                display: flex;
-                align-items: center;
-            }
-        
-            & li {
-                padding: 0;
-            }
-        
-            & a {
-                display: block;
-                padding: 1em;
-                text-decoration: none;
-                margin: 0;
-                color: inherit;
-                width: 100%;
-                height: 100%;
-                box-sizing: border-box;
-            }
-            & a:hover, a:focus {
-                background-color: steelblue;
-                color: white;
-                outline: none;
-            }
-        
-            & li > a.current {
-                border: 2px solid white;
-                border-radius: 10px;
-                padding: 0.3em 0.7em;
-                cursor: pointer;
-            }
-        }
-        
-        #checkbox-toggle:checked ~ .menu {
-            display:flex;
-            position: relative;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-        
-        .menu {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            width: 100%; 
-        }
-        
-        .menu-btn {display:none;}
-    
-        .menu li {
-            flex: 0 0 auto;
-            padding: 0;
-            text-align: center;
-            position: relative;
-            margin: 0;
-        }
-        
-        .menu li > small {
-            margin-left: .5em;
-            display: inline-block;
-        }
-        
-        .menu li:hover .submenu {
-            display: block;
-        }
-        
-        .submenu {
-            display: none;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            background-color: steelblue;
-            text-align: left;
-            z-index: 10;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .submenu ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-        }
-        
-        .submenu li {
-            text-align: left;
-        }
-        
-        .submenu li a {
-            display: block; 
-            padding: 0.75em 1em;
-            text-decoration: none;
+    .navbar {
+        background-color: steelblue;
+        margin-bottom: 1em;
+        & ul {
             color: white;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+    
+        & li {
+            padding: 0;
+        }
+    
+        & a {
+            display: block;
+            padding: 1em;
+            text-decoration: none;
+            margin: 0;
+            color: inherit;
+            width: 100%;
+            height: 100%;
             box-sizing: border-box;
         }
-        
-        .submenu li a:hover, .submenu li a:focus {
+        & a:hover, a:focus {
             background-color: steelblue;
             color: white;
             outline: none;
         }
-        
-        
-        .submenu {
-            & li a {
-                display: none; 
-            }
+    
+        & li > a.current {
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 0.3em 0.7em;
+            cursor: pointer;
         }
-        
-        .menu li:hover .submenu {
+    }
+    
+    #checkbox-toggle:checked ~ .menu {
+        display:flex;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%; 
+    }
+    
+    .menu-btn {display:none;}
+
+    .menu li {
+        flex: 0 0 auto;
+        padding: 0;
+        text-align: center;
+        position: relative;
+        margin: 0;
+    }
+    
+    .menu li > small {
+        margin-left: .5em;
+        display: inline-block;
+    }
+    
+    .menu li:hover .submenu {
+        display: block;
+    }
+    
+    .submenu {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background-color: steelblue;
+        text-align: left;
+        z-index: 10;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .submenu ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    
+    .submenu li {
+        text-align: left;
+    }
+    
+    .submenu li a {
+        display: block; 
+        padding: 0.75em 1em;
+        text-decoration: none;
+        color: white;
+        box-sizing: border-box;
+    }
+    
+    .submenu li a:hover, .submenu li a:focus {
+        background-color: steelblue;
+        color: white;
+        outline: none;
+    }
+    
+    
+    .submenu {
+        & li a {
+            display: none; 
+        }
+    }
+    
+    .menu li:hover .submenu {
+        display: block;
+        & li a {
             display: block;
-            & li a {
-                display: block;
-            }
         }
+    }
+    
+    
 }
-    @media only screen and (width <= 640px) {
-        main{
-            display: block;
-        }
-        main{
-            display: flex;
-        }
+@media only screen and (width <= 640px) {
+    main {
+        display: block; /* Correct: main content stacks vertically */
+        /* Remove the conflicting 'display: flex;' from here */
+    }
+    main section,
+    main aside {
+        width: 100%;    /* Correct: section and aside take full width */
+        flex-basis: auto; /* Correct: Reset flex-basis */
+        margin-left: 0;   /* Correct: Reset margin for full width */
+    }
+
         
         main h3 {
             color: maroon;
@@ -549,190 +585,4 @@ td[rowspan] {
         }
         td.food {
             font-weight: bold;
-        }
-        
-       } 
-        
-        main aside {
-            margin-left: 1em;
-            padding: .5em;
-            border: solid steelblue;
-            border-radius: 10px;
-            margin-bottom: 2em;
-            display: inline-block;
-            align-self: flex-start;
-        }
-        
-        main aside h2 {
-               color: maroon;
-            }
-        
-        main aside ul {
-                line-height: 150%;
-                padding-left: .75em;
-            }
-        
-        main aside a {
-                color: steelblue;
-            }
-        main aside a:hover, main aside a:focus {
-                color: maroon;
-            }
-        
-    
-            .navbar {
-                background-color: steelblue;
-                margin-bottom: 1em;
-                & ul {
-                    color: white;
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    display: none;
-                    align-items: center;
-                }
-            
-                & li {
-                    padding: 0;
-                }
-            
-                & a {
-                    display: block;
-                    padding: 1em;
-                    text-decoration: none;
-                    margin: 0;
-                    color: inherit;
-                    width: 100%;
-                    height: 100%;
-                    box-sizing: border-box;
-                }
-                & a:hover, a:focus {
-                    background-color: steelblue;
-                    color: white;
-                    outline: none;
-                }
-            
-                & li > a.current {
-                    border: 2px solid white;
-                    border-radius: 10px;
-                    padding: 0.3em 0.7em;
-                    cursor: pointer;
-                }
-            }
-            
-            .menu {
-                display: none;
-                
-            }
-            
-            #checkbox-toggle {display: none;}
-            .menu-btn {
-                display: block;
-                
-                padding:.25em 1em;
-                color: var(--light);
-                font-size: 16px;
-                }
-                .menu-btn::after {content: "\2630";}
-            
-                #checkbox-toggle:checked ~ .menu {
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    background-color: steelblue;
-                }
-                
-                #checkbox-toggle:checked ~ .menu-btn::after {content: "\2716";
-                }
-                .menu li:has(.submenu) {
-                    position: relative;
-                    & small {
-                        margin-left: .25em; /* add space for arrow */
-                        
-                    }
-                    &:hover > .submenu {
-                        display: block;
-                    }
-                }
-                .menu li:has(.submenu) small::after {
-                    content: "\25b6";
-                }
-            
-            .submenu {
-                position: absolute;
-                left: 100%;
-                top: 0;
-                background-color: var(--primary-color);
-                color: var(--light);
-                width: 175%;
-                display: none;
-            }
-            
-            .menu li {
-                flex: 0 0 auto;
-                padding: 0;
-                text-align: center;
-                position: relative;
-                margin: 0;
-            }
-            
-            .menu li > small {
-                margin-left: .5em;
-                display: inline-block;
-            }
-            
-            .menu li:hover .submenu {
-                display: block;
-            }
-            
-            .submenu {
-                display: none;
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 100%;
-                background-color: steelblue;
-                text-align: left;
-                z-index: 10;
-                padding: 0;
-                margin: 0;
-            }
-            
-            .submenu ul {
-                padding: 0;
-                margin: 0;
-                list-style-type: none;
-            }
-            
-            .submenu li {
-                text-align: left;
-            }
-            
-            .submenu li a {
-                display: block; 
-                padding: 0.75em 1em;
-                text-decoration: none;
-                color: white;
-                box-sizing: border-box;
-            }
-            
-            .submenu li a:hover, .submenu li a:focus {
-                background-color: steelblue;
-                color: white;
-                outline: none;
-            }
-            
-            
-            .submenu {
-                & li a {
-                    display: none; 
-                }
-            }
-            
-            .menu li:hover .submenu {
-                display: block;
-                & li a {
-                    display: block;
-                }
-            }
-            
+        }}
