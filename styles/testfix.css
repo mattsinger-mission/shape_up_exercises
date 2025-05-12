@@ -505,11 +505,17 @@ td[rowspan] {
     
 }
 @media only screen and (width <= 640px) {
-        main{
-            display: block;
-        }
-        
-        }
+    main {
+        display: block; /* Correct: main content stacks vertically */
+        /* Remove the conflicting 'display: flex;' from here */
+    }
+    main section,
+    main aside {
+        width: 100%;    /* Correct: section and aside take full width */
+        flex-basis: auto; /* Correct: Reset flex-basis */
+        margin-left: 0;   /* Correct: Reset margin for full width */
+    }
+
         
         main h3 {
             color: maroon;
@@ -556,8 +562,4 @@ td[rowspan] {
         }
         td.food {
             font-weight: bold;
-        }
-        
-       
-        
-       
+        }}
