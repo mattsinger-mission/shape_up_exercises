@@ -50,7 +50,7 @@ header img {
     width: clamp(100px, 100%, 120px);
 }
 
-header.stress-header h1 {
+header.cal_header h1 {
     font-family: 'Captain';
     
 
@@ -281,6 +281,9 @@ table {
     font-family: Arial, sans-serif;
     border: 2px solid black; 
 }
+caption {
+    color: maroon;
+    }
 
 th, td {
     text-align: left; 
@@ -319,28 +322,27 @@ td[rowspan] {
         font-size: calc(115% + 1vw);
         margin-top: 0;
     }
-   table {
+   main section table {
         width: 100%;
         margin: 20px auto;
         border-collapse: collapse; 
         font-family: Arial, sans-serif;
         border: 2px solid black; 
     }
-    th, td {
+    main section th, td {
         text-align: left; 
         padding: 8px;
     }
-    th {
+    main section th {
         background-color: steelblue;
         color: white;
         font-weight: bold;
     }
-    td[rowspan] {
+    main section td[rowspan] {
         vertical-align: top; 
         font-weight: bold; 
     }
-    
-   } 
+     
     
     main aside {
         flex-basis: 25%;
@@ -493,7 +495,246 @@ td[rowspan] {
             display: block;
         }
     }
-    
-    
 }
-
+    @media only screen and (width <= 640px) {
+        main{
+            display: block;
+        }
+        main{
+            display: flex;
+        }
+        
+        main h3 {
+            color: maroon;
+        }
+        main section {
+            flex-basis: 75%;
+            clear: left;
+        }
+        main section a{
+            color: maroon;
+        }
+        main section a:hover, main section a:focus {
+                color: steelblue
+         }
+        main section h2 {
+            font-size: calc(115% + 1vw);
+            margin-top: 0;
+        }
+       table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse; 
+            font-family: Arial, sans-serif;
+            border: 2px solid black; 
+        }
+        thead {
+            display:none;
+        }
+        th, td {
+            display: block;
+            position: relative;
+            text-align: left; 
+            padding: 8px;
+        }
+        th {
+            background-color: steelblue;
+            color: white;
+            font-weight: bold;
+        }
+        td[rowspan] {
+            vertical-align: top; 
+            font-weight: bold;
+            background-color: steelblue;
+            color: white; 
+        }
+        td.food {
+            font-weight: bold;
+        }
+        
+       } 
+        
+        main aside {
+            flex-basis: 25%;
+            margin-left: 1em;
+            padding: .5em;
+            border: solid steelblue;
+            border-radius: 10px;
+            margin-bottom: 2em;
+            display: inline-block;
+            align-self: flex-start;
+        }
+        
+        main aside h2 {
+               color: maroon;
+            }
+        
+        main aside ul {
+                line-height: 150%;
+                padding-left: .75em;
+            }
+        
+        main aside a {
+                color: steelblue;
+            }
+        main aside a:hover, main aside a:focus {
+                color: maroon;
+            }
+        
+    
+            .navbar {
+                background-color: steelblue;
+                margin-bottom: 1em;
+                & ul {
+                    color: white;
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    display: none;
+                    align-items: center;
+                }
+            
+                & li {
+                    padding: 0;
+                }
+            
+                & a {
+                    display: block;
+                    padding: 1em;
+                    text-decoration: none;
+                    margin: 0;
+                    color: inherit;
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                }
+                & a:hover, a:focus {
+                    background-color: steelblue;
+                    color: white;
+                    outline: none;
+                }
+            
+                & li > a.current {
+                    border: 2px solid white;
+                    border-radius: 10px;
+                    padding: 0.3em 0.7em;
+                    cursor: pointer;
+                }
+            }
+            
+            .menu {
+                display: none;
+                
+            }
+            
+            #checkbox-toggle {display: none;}
+            .menu-btn {
+                display: block;
+                
+                padding:.25em 1em;
+                color: var(--light);
+                font-size: 16px;
+                }
+                .menu-btn::after {content: "\2630";}
+            
+                #checkbox-toggle:checked ~ .menu {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    background-color: steelblue;
+                }
+                
+                #checkbox-toggle:checked ~ .menu-btn::after {content: "\2716";
+                }
+                .menu li:has(.submenu) {
+                    position: relative;
+                    & small {
+                        margin-left: .25em; /* add space for arrow */
+                        
+                    }
+                    &:hover > .submenu {
+                        display: block;
+                    }
+                }
+                .menu li:has(.submenu) small::after {
+                    content: "\25b6";
+                }
+            
+            .submenu {
+                position: absolute;
+                left: 100%;
+                top: 0;
+                background-color: var(--primary-color);
+                color: var(--light);
+                width: 175%;
+                display: none;
+            }
+            
+            .menu li {
+                flex: 0 0 auto;
+                padding: 0;
+                text-align: center;
+                position: relative;
+                margin: 0;
+            }
+            
+            .menu li > small {
+                margin-left: .5em;
+                display: inline-block;
+            }
+            
+            .menu li:hover .submenu {
+                display: block;
+            }
+            
+            .submenu {
+                display: none;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 100%;
+                background-color: steelblue;
+                text-align: left;
+                z-index: 10;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .submenu ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+            
+            .submenu li {
+                text-align: left;
+            }
+            
+            .submenu li a {
+                display: block; 
+                padding: 0.75em 1em;
+                text-decoration: none;
+                color: white;
+                box-sizing: border-box;
+            }
+            
+            .submenu li a:hover, .submenu li a:focus {
+                background-color: steelblue;
+                color: white;
+                outline: none;
+            }
+            
+            
+            .submenu {
+                & li a {
+                    display: none; 
+                }
+            }
+            
+            .menu li:hover .submenu {
+                display: block;
+                & li a {
+                    display: block;
+                }
+            }
+            
