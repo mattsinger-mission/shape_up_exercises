@@ -508,8 +508,7 @@ td[rowspan] {
             color: maroon;
         }
         main section {
-            flex-basis: 75%;
-            clear: left;
+            
         }
         main section a{
             color: maroon;
@@ -555,7 +554,6 @@ td[rowspan] {
        } 
         
         main aside {
-            flex-basis: 25%;
             margin-left: 1em;
             padding: .5em;
             border: solid steelblue;
