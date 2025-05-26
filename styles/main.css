@@ -1,7 +1,7 @@
 @font-face {
     font-family: Captain;
-    src: url("../styles/American Captain.ttf");}
-
+    src: url("/styles/American Captain.ttf");
+}
 :root {
     margin: 0;
     padding: 0;
@@ -16,29 +16,40 @@ body {
     padding: 1em;
     font-family: Arial, Helvetica, sans-serif;
     font-size: calc(100% + 1vw);
-    
+    display: grid;
+    grid-template-rows: 10% 5% 1fr 5%;
+    grid-template-columns: 5 auto;
 }
+
+header {grid-row: 1 / 2; grid-column: 1 / span 5;}
+.navbar {grid-row: 2 / 3; grid-column: 1 / span 5;}
+    .navbar ul { grid-column: 1 / span 2; grid-row: 1 / 2; display: flex; justify-content: space-between; align-items: center; padding: 0; margin: 0;}
+main {grid-row: 3 / 4; grid-column: 1 / span 5;}
+footer {grid-row: 4 / 5; grid-column: 1 / span 5;}
+
+
  a{
     font-weight: bold;
 }
 
 header {
 background-image: linear-gradient(white, lightsteelblue);
-    margin-left: -1em;
-    margin-right: -1em;
+    margin-left: -1.2em;
+    margin-right: -1.2em;
     border-bottom: 2px solid steelblue;
     margin-bottom: 1em;
     padding-bottom: 1em;
+    
 }
 
 header h1 {
     font-size: calc(175% + 1vw);
     font-style: italic;
     color: steelblue;
-    padding-bottom: 0;
+    padding-bottom: .2em;
     margin-bottom: 0.2em;
+    font-family: 'Captain';
 }
-
 header h3 {
     font-size: calc(110% + 1vw);
     margin-top: 0;
@@ -59,42 +70,45 @@ header.stress-header h1 {
 .navbar {
     background-color: steelblue;
     margin-bottom: 1em;
-    & ul {
-        color: white;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: none;
-        align-items: center;
-    }
-
-    & li {
-        padding: 0;
-    }
-
-    & a {
-        display: block;
-        padding: 1em;
-        text-decoration: none;
-        margin: 0;
-        color: inherit;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-    }
-    & a:hover, a:focus {
-        background-color: steelblue;
-        color: white;
-        outline: none;
-    }
-
-    & li > a.current {
-        border: 2px solid white;
-        border-radius: 10px;
-        padding: 0.3em 0.7em;
-        cursor: pointer;
-    }
+    margin-top: -1em;
+    margin-left: -1.2em;
+    margin-right: -1.2em;
+    padding: 0.5em;
+    align-items: stretch;
 }
+
+.navbar ul {
+    color: white;
+    list-style-type: none;
+    padding: .2em;
+    display: none;
+}
+
+.navbar li {
+    padding: 0;
+}
+
+.navbar a {
+    padding: 1em;
+    text-decoration: none;
+    margin: 0;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+.navbar a:hover, .navbar a:focus {
+    background-color: steelblue;
+    color: white;
+    outline: none;
+}
+
+.navbar li > a.current {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.3em 0.7em;
+    cursor: pointer;
+}
+
 
 .menu {
 	display: none;
@@ -104,35 +118,32 @@ header.stress-header h1 {
 #checkbox-toggle {display: none;}
 .menu-btn {
 	display: block;
-	
 	padding:.25em 1em;
 	color: var(--light);
 	font-size: 16px;
-	}
-	.menu-btn::after {content: "\2630";}
+}
+.menu-btn::after {content: "\2630";}
 
-	#checkbox-toggle:checked ~ .menu {
+
+#checkbox-toggle:checked ~ .menu {
 		display: block;
-		position: absolute;
-		left: 0;
-		background-color: steelblue;
+        position: absolute;
+        background-color: steelblue;
 	}
-	
-	#checkbox-toggle:checked ~ .menu-btn::after {content: "\2716";
-	}
-    .menu li:has(.submenu) {
-		position: relative;
-		& small {
-			margin-left: .25em; /* add space for arrow */
-			
-		}
-		&:hover > .submenu {
-			display: block;
-		}
-	}
-	.menu li:has(.submenu) small::after {
-		content: "\25b6";
-	}
+#checkbox-toggle:checked ~ .menu-btn::after {content: "\2716";
+}
+.menu li:has(.submenu) {
+    position: relative;
+}
+.menu li:has(.submenu) small {
+    margin-left: .25em;			
+}
+.menu li:has(.submenu):hover > .submenu {
+    display: block;
+}
+.menu li:has(.submenu) small::after {
+    content: "\25b6";
+}
 
 .submenu {
 	position: absolute;
@@ -143,7 +154,6 @@ header.stress-header h1 {
 	width: 175%;
 	display: none;
 }
-
 .menu li {
     flex: 0 0 auto;
     padding: 0;
@@ -151,6 +161,7 @@ header.stress-header h1 {
     position: relative;
     margin: 0;
 }
+
 
 .menu li > small {
     margin-left: .5em;
@@ -213,13 +224,21 @@ header.stress-header h1 {
 }
 
 main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
    
+}
+main h2 {
+    color: black;
+    font-size: calc(100% + 1vw);
 }
 
 main h3 {
     color: maroon;
 }
 main section {
+    grid-row: 1 / 2;
     clear: left;
     order: -1;
 }
@@ -250,9 +269,9 @@ main section h2 {
   }
   
   .stress-image {
-      display: block; /* Prevents potential extra space below */
+      display: block; 
       max-width: 100%;
-      height: auto; /* Maintains aspect ratio */
+      height: auto; 
   }
 
   .stress-figure figcaption {
@@ -265,6 +284,7 @@ main section h2 {
   }
     
 main aside {
+    grid-row: 2 / 3;
     margin-left: 0;
     padding: .5em;
     margin-bottom: 2em;
@@ -301,15 +321,49 @@ footer {
     text-align: center;
 }
 @media only screen and (min-width: 1310px) {
+    header {
+        grid-column: 1 / span 5;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: flex-start;
+        column-gap: 1em;
+        padding: 0 1em 2.5em 1em;
+        box-sizing: border-box;      
+    }
+   
+    header img {
+        float: none;
+        grid-column: 1 / 2;
+        width: 100px;
+        height: auto;
+        align-self: flex-start;
+    }
+
+    header h1 {
+        grid-column: 2 / 3;
+        margin-top: 0;
+        margin-bottom: 0.1em;
+        padding-bottom: 0;
+    }
+
+    header h3 {
+        grid-column: 2 / 3;
+        margin-top: 0;
+    }
+    
     main{
-        display: flex;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
     }
     
     main h3 {
         color: maroon;
     }
     main section {
-        flex-basis: 75%;
+        grid-column: 1;
+        grid-row: 1 / 2;
         clear: left;
     }
     main section a{
@@ -325,7 +379,8 @@ footer {
     
     
     main aside {
-        flex-basis: 25%;
+        grid-column: 2;
+        grid-row: 1 / 2;
         margin-left: 1em;
         padding: .5em;
         border: solid steelblue;
@@ -355,49 +410,52 @@ footer {
     .navbar {
         background-color: steelblue;
         margin-bottom: 1em;
-        & ul {
-            color: white;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-        }
+    }
+    .navbar ul {
+        color: white;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
     
-        & li {
-            padding: 0;
-        }
+    .navbar li {
+        padding: 0;
+    }
     
-        & a {
-            display: block;
-            padding: 1em;
-            text-decoration: none;
-            margin: 0;
-            color: inherit;
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-        }
-        & a:hover, a:focus {
-            background-color: steelblue;
-            color: white;
-            outline: none;
-        }
+    .navbar a {
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+        margin: 0;
+        color: inherit;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    .navbar a:hover, .navbar a:focus {
+        background-color: steelblue;
+        color: white;
+        outline: none;
+    }
     
-        & li > a.current {
-            border: 2px solid white;
-            border-radius: 10px;
-            padding: 0.3em 0.7em;
-            cursor: pointer;
-        }
+    .navbar li > a.current {
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 0.3em 0.7em;
+        cursor: pointer;
     }
     
     #checkbox-toggle:checked ~ .menu {
         display:flex;
         position: relative;
+        left: auto; 
+        top: auto; 
+        width: 100%;
         flex-direction: row;
         justify-content: space-evenly;
-    }
+       }
     
     .menu {
         display: flex;
@@ -464,17 +522,16 @@ footer {
     
     
     .submenu {
-        & li a {
+        & li a { /* SCSS Syntax */
             display: none; 
         }
     }
     
     .menu li:hover .submenu {
         display: block;
-        & li a {
+        & li a { /* SCSS Syntax */
             display: block;
         }
     }
-    
     
 }
