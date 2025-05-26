@@ -1,6 +1,6 @@
 @font-face {
     font-family: Captain;
-    src: url("American Captain.ttf");
+    src: url("styles/AmericanCaptain.ttf");
 }
 :root {
     margin: 0;
